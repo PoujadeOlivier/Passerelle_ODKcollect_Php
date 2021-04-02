@@ -62,7 +62,7 @@ RemoveType all<br/>
 php_flag engine off<br/>
 </DirectoryMatch>
 
-#pensez à bien vérifier les réponses récupérer via les formulaire, si intégration dans une base de données<br/>
+#pensez à bien vérifier les réponses récupérées via les formulaires, si intégration dans une base de données<br/>
 //exemple avec real_escape_string : Protège une commande SQL de la présence de caractères spéciaux<br/>
 // $mysqli->real_escape_string($xml->ReponseQuestion);
 
