@@ -79,6 +79,8 @@ elseif( $_SERVER['REQUEST_METHOD'] === "POST" )
 
 
 			$data = util::http_digest_parse($_SERVER['PHP_AUTH_DIGEST']);
+//ici code de vérif identifiant odkcollecy, fonctionne en http, mais crash en https, il faut que je relise mon source
+/*
 			if (! $data || ! isset($users[ $data['username'] ]))
 				die('Wrong Credentials!');
 
@@ -87,7 +89,7 @@ elseif( $_SERVER['REQUEST_METHOD'] === "POST" )
 			if ( ! util::check_user_pass($users) )
 			die('Wrong Credentials!');			
 
-
+*/
 			
 
 
