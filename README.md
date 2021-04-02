@@ -3,9 +3,9 @@
 
 Prérequis serveur<br/>
 Apache2<br/>
-Php > 5.4  -  php 7  -  php 8<br/>
+Php > 5.4  -  Php 7  -  Php 8<br/>
 
-Prérequis client android<br/>
+Prérequis client Android<br/>
 ODK Collect 
 (https://play.google.com/store/apps/details?id=org.odk.collect.android&hl=fr&gl=US  |  https://github.com/getodk/collect)<br/>
 
