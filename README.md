@@ -51,6 +51,7 @@ Remarques pour le démarrage :<br/>
 php.ini<br/>
 #pensez à paramétrer la taille de réception d'un fichier si vous récupérez des photos<br/>
 post_max_size = 10M<br/>
+upload_max_filesize = 30M<br/>
 #pensez au temps de transfert, donc au temps que vous laissez à votre script pour effectuer l'opération<br/>
 max_execution_time = 60
 
