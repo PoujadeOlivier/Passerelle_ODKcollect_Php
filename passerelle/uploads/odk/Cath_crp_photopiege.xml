@@ -1,0 +1,322 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+
+	<h:head>
+		<h:title>CRPphotopiege</h:title>
+		<model>
+		
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 1 ###########################
+			#######################################################-->
+			
+			<instance>
+				<!-- submitted data and defaults go here -->
+				<data id="CRPphotopiege">
+						<!-- hidden fields -->
+						<StartTime/>
+						<EndTime/>
+						<date/>						
+						<binome>Cath</binome>
+						<idpiege/>						
+						<photo/>						
+						<remarque/>
+				</data>
+			</instance>
+
+
+
+
+
+			
+
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 2 ###########################
+			#######################################################-->
+			
+			<bind nodeset="/data/StartTime" type="dateTime" jr:preload="timestamp" jr:preloadParams="start"/>
+			<bind nodeset="/data/EndTime" type="dateTime" jr:preload="timestamp" jr:preloadParams="end"/>
+			<bind  calculate="now()" nodeset="/data/date" type="date" required="true()"/>			
+			<bind nodeset="/data/binome" type="string" jr:preload="username"/>
+			<bind nodeset="/data/idpiege" type="select1" required="true()"/>
+			<bind nodeset="/data/photo" type="binary" required="true()"/>	
+			<bind nodeset="/data/remarque" type="string" required="false()"/>
+			
+		</model>
+	</h:head>
+
+
+	<h:body>			
+
+	
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 3 ###########################
+			#######################################################-->
+			
+			
+			
+			<group appearance="field-list">
+				<input ref="/data/binome">
+					<label>Identifiant technicien</label>
+					<hint>Garder le même toute la campagne</hint>
+				</input>		  
+				  
+				<input  ref="/data/date" appearance="no-calendar">
+					<label>Jour du comptage</label>
+				</input>			
+			</group>
+			
+			<select1 ref="/data/idpiege" appearance="search">
+			<label>Choix du piège relevé</label>
+				<item><label>Piège 2</label><value>2</value></item>
+				<item><label>Piège 3</label><value>3</value></item>
+				<item><label>Piège 4</label><value>4</value></item>
+				<item><label>Piège 5</label><value>5</value></item>
+				<item><label>Piège 6</label><value>6</value></item>
+				<item><label>Piège 8</label><value>8</value></item>
+				<item><label>Piège 9</label><value>9</value></item>
+				<item><label>Piège 11</label><value>11</value></item>
+				<item><label>Piège 12</label><value>12</value></item>
+				<item><label>Piège 13</label><value>13</value></item>
+				<item><label>Piège 14</label><value>14</value></item>
+				<item><label>Piège 17</label><value>17</value></item>
+				<item><label>Piège 18</label><value>18</value></item>
+				<item><label>Piège 19</label><value>19</value></item>
+				<item><label>Piège 20</label><value>20</value></item>
+				<item><label>Piège 21</label><value>21</value></item>
+				<item><label>Piège 22</label><value>22</value></item>
+				<item><label>Piège 23</label><value>23</value></item>
+				<item><label>Piège 24</label><value>24</value></item>
+				<item><label>Piège 25</label><value>25</value></item>
+				<item><label>Piège 26</label><value>26</value></item>
+				<item><label>Piège 27</label><value>27</value></item>
+				<item><label>Piège 28</label><value>28</value></item>
+				<item><label>Piège 29</label><value>29</value></item>
+				<item><label>Piège 30</label><value>30</value></item>
+				<item><label>Piège 31</label><value>31</value></item>
+				<item><label>Piège 32</label><value>32</value></item>
+				<item><label>Piège 33</label><value>33</value></item>
+				<item><label>Piège 34</label><value>34</value></item>
+				<item><label>Piège 35</label><value>35</value></item>
+				<item><label>Piège 36</label><value>36</value></item>
+				<item><label>Piège 37</label><value>37</value></item>
+				<item><label>Piège 38</label><value>38</value></item>
+				<item><label>Piège 39</label><value>39</value></item>
+				<item><label>Piège 40</label><value>40</value></item>
+				<item><label>Piège 41</label><value>41</value></item>
+				<item><label>Piège 42</label><value>42</value></item>
+				<item><label>Piège 43</label><value>43</value></item>
+				<item><label>Piège 44</label><value>44</value></item>
+				<item><label>Piège 45</label><value>45</value></item>
+				<item><label>Piège 46</label><value>46</value></item>
+				<item><label>Piège 47</label><value>47</value></item>
+				<item><label>Piège 48</label><value>48</value></item>
+				<item><label>Piège 49</label><value>49</value></item>
+				<item><label>Piège 51</label><value>51</value></item>
+				<item><label>Piège 52</label><value>52</value></item>
+				<item><label>Piège 53</label><value>53</value></item>
+				<item><label>Piège 54</label><value>54</value></item>
+				<item><label>Piège 55</label><value>55</value></item>
+				<item><label>Piège 56</label><value>56</value></item>
+				<item><label>Piège 57</label><value>57</value></item>
+				<item><label>Piège 58</label><value>58</value></item>
+				<item><label>Piège 59</label><value>59</value></item>
+				<item><label>Piège 60</label><value>60</value></item>
+				<item><label>Piège 62</label><value>62</value></item>
+				<item><label>Piège 63</label><value>63</value></item>
+				<item><label>Piège 65</label><value>65</value></item>
+				<item><label>Piège 66</label><value>66</value></item>
+				<item><label>Piège 67</label><value>67</value></item>
+				<item><label>Piège 68</label><value>68</value></item>
+				<item><label>Piège 69</label><value>69</value></item>
+				<item><label>Piège 70</label><value>70</value></item>
+				<item><label>Piège 71</label><value>71</value></item>
+				<item><label>Piège 72</label><value>72</value></item>
+				<item><label>Piège 73</label><value>73</value></item>
+				<item><label>Piège 74</label><value>74</value></item>
+				<item><label>Piège 90</label><value>90</value></item>
+				<item><label>Piège 91</label><value>91</value></item>
+				<item><label>Piège 92</label><value>92</value></item>
+				<item><label>Piège 93</label><value>93</value></item>
+				<item><label>Piège 94</label><value>94</value></item>
+				<item><label>Piège 95</label><value>95</value></item>
+				<item><label>Piège 96</label><value>96</value></item>
+				<item><label>Piège 97</label><value>97</value></item>
+				<item><label>Piège 98</label><value>98</value></item>
+				<item><label>Piège 112</label><value>112</value></item>
+				<item><label>Piège 113</label><value>113</value></item>
+				<item><label>Piège 114</label><value>114</value></item>
+				<item><label>Piège 115</label><value>115</value></item>
+				<item><label>Piège 116</label><value>116</value></item>
+				<item><label>Piège 117</label><value>117</value></item>
+				<item><label>Piège 118</label><value>118</value></item>
+				<item><label>Piège 119</label><value>119</value></item>
+				<item><label>Piège 120</label><value>120</value></item>
+				<item><label>Piège 121</label><value>121</value></item>
+				<item><label>Piège 122</label><value>122</value></item>
+				<item><label>Piège 123</label><value>123</value></item>
+				<item><label>Piège 124</label><value>124</value></item>
+				<item><label>Piège 125</label><value>125</value></item>
+				<item><label>Piège 126</label><value>126</value></item>
+				<item><label>Piège 127</label><value>127</value></item>
+				<item><label>Piège 128</label><value>128</value></item>
+				<item><label>Piège 129</label><value>129</value></item>
+				<item><label>Piège 130</label><value>130</value></item>
+				<item><label>Piège 131</label><value>131</value></item>
+				<item><label>Piège 132</label><value>132</value></item>
+				<item><label>Piège 133</label><value>133</value></item>
+				<item><label>Piège 134</label><value>134</value></item>
+				<item><label>Piège 135</label><value>135</value></item>
+				<item><label>Piège 136</label><value>136</value></item>
+				<item><label>Piège 137</label><value>137</value></item>
+				<item><label>Piège 138</label><value>138</value></item>
+				<item><label>Piège 139</label><value>139</value></item>
+				<item><label>Piège 140</label><value>140</value></item>
+				<item><label>Piège 141</label><value>141</value></item>
+				<item><label>Piège 142</label><value>142</value></item>
+				<item><label>Piège 143</label><value>143</value></item>
+				<item><label>Piège 144</label><value>144</value></item>
+				<item><label>Piège 145</label><value>145</value></item>
+				<item><label>Piège 146</label><value>146</value></item>
+				<item><label>Piège 147</label><value>147</value></item>
+				<item><label>Piège 148</label><value>148</value></item>
+				<item><label>Piège 149</label><value>149</value></item>
+				<item><label>Piège 150</label><value>150</value></item>
+				<item><label>Piège 151</label><value>151</value></item>
+				<item><label>Piège 152</label><value>152</value></item>
+				<item><label>Piège 153</label><value>153</value></item>
+				<item><label>Piège 154</label><value>154</value></item>
+				<item><label>Piège 155</label><value>155</value></item>
+				<item><label>Piège 156</label><value>156</value></item>
+				<item><label>Piège 157</label><value>157</value></item>
+				<item><label>Piège 158</label><value>158</value></item>
+				<item><label>Piège 159</label><value>159</value></item>
+				<item><label>Piège 160</label><value>160</value></item>
+				<item><label>Piège 161</label><value>161</value></item>
+				<item><label>Piège 162</label><value>162</value></item>
+				<item><label>Piège 163</label><value>163</value></item>
+				<item><label>Piège 164</label><value>164</value></item>
+				<item><label>Piège 165</label><value>165</value></item>
+				<item><label>Piège 168</label><value>168</value></item>
+				<item><label>Piège 169</label><value>169</value></item>
+				<item><label>Piège 171</label><value>171</value></item>
+				<item><label>Piège 172</label><value>172</value></item>
+				<item><label>Piège 175</label><value>175</value></item>
+				<item><label>Piège 176</label><value>176</value></item>
+				<item><label>Piège 177</label><value>177</value></item>
+				<item><label>Piège 181</label><value>181</value></item>
+				<item><label>Piège 182</label><value>182</value></item>
+				<item><label>Piège 183</label><value>183</value></item>
+				<item><label>Piège 184</label><value>184</value></item>
+				<item><label>Piège 185</label><value>185</value></item>
+				<item><label>Piège 186</label><value>186</value></item>
+				<item><label>Piège 187</label><value>187</value></item>
+				<item><label>Piège 188</label><value>188</value></item>
+				<item><label>Piège 189</label><value>189</value></item>
+				<item><label>Piège 190</label><value>190</value></item>
+				<item><label>Piège 191</label><value>191</value></item>
+				<item><label>Piège 192</label><value>192</value></item>
+				<item><label>Piège 193</label><value>193</value></item>
+				<item><label>Piège 194</label><value>194</value></item>
+				<item><label>Piège 195</label><value>195</value></item>
+				<item><label>Piège 196</label><value>196</value></item>
+				<item><label>Piège 197</label><value>197</value></item>
+				<item><label>Piège 198</label><value>198</value></item>
+				<item><label>Piège 199</label><value>199</value></item>
+				<item><label>Piège 200</label><value>200</value></item>
+				<item><label>Piège 201</label><value>201</value></item>
+				<item><label>Piège 202</label><value>202</value></item>
+				<item><label>Piège 203</label><value>203</value></item>
+				<item><label>Piège 204</label><value>204</value></item>
+				<item><label>Piège 205</label><value>205</value></item>
+				<item><label>Piège 206</label><value>206</value></item>
+				<item><label>Piège 207</label><value>207</value></item>
+				<item><label>Piège 208</label><value>208</value></item>
+				<item><label>Piège 209</label><value>209</value></item>
+				<item><label>Piège 210</label><value>210</value></item>
+				<item><label>Piège 211</label><value>211</value></item>
+				<item><label>Piège 212</label><value>212</value></item>
+				<item><label>Piège 213</label><value>213</value></item>
+				<item><label>Piège 214</label><value>214</value></item>
+				<item><label>Piège 215</label><value>215</value></item>
+				<item><label>Piège 216</label><value>216</value></item>
+				<item><label>Piège 217</label><value>217</value></item>
+				<item><label>Piège 218</label><value>218</value></item>
+				<item><label>Piège 219</label><value>219</value></item>
+				<item><label>Piège 220</label><value>220</value></item>
+				<item><label>Piège 221</label><value>221</value></item>
+				<item><label>Piège 222</label><value>222</value></item>
+				<item><label>Piège 223</label><value>223</value></item>
+				<item><label>Piège 224</label><value>224</value></item>
+				<item><label>Piège 225</label><value>225</value></item>
+				<item><label>Piège 226</label><value>226</value></item>
+				<item><label>Piège 227</label><value>227</value></item>
+				<item><label>Piège 228</label><value>228</value></item>
+				<item><label>Piège 229</label><value>229</value></item>
+				<item><label>Piège 230</label><value>230</value></item>
+				<item><label>Piège 231</label><value>231</value></item>
+				<item><label>Piège 232</label><value>232</value></item>
+				<item><label>Piège 233</label><value>233</value></item>
+				<item><label>Piège 234</label><value>234</value></item>
+				<item><label>Piège 235</label><value>235</value></item>
+				<item><label>Piège 236</label><value>236</value></item>
+				<item><label>piège 237</label><value>237</value></item>
+				<item><label>piège 238</label><value>238</value></item>
+				<item><label>Piège 239</label><value>239</value></item>
+				
+				<item><label>Piège 240</label><value>240</value></item>
+				<item><label>Piège 241</label><value>241</value></item>
+				<item><label>Piège 242</label><value>242</value></item>
+				<item><label>Piège 243</label><value>243</value></item>
+				<item><label>Piège 244</label><value>244</value></item>
+				<item><label>Piège 245</label><value>245</value></item>
+				<item><label>Piège 246</label><value>246</value></item>
+				<item><label>piège 247</label><value>247</value></item>
+				<item><label>piège 248</label><value>248</value></item>
+				<item><label>Piège 249</label><value>249</value></item>		
+				
+				<item><label>Piège 250</label><value>250</value></item>
+				<item><label>Piège 251</label><value>251</value></item>
+				<item><label>Piège 252</label><value>252</value></item>
+				<item><label>Piège 253</label><value>253</value></item>
+				<item><label>Piège 254</label><value>254</value></item>
+				<item><label>Piège 255</label><value>255</value></item>
+				<item><label>Piège 256</label><value>256</value></item>
+				<item><label>piège 257</label><value>257</value></item>
+				<item><label>piège 258</label><value>258</value></item>
+				<item><label>Piège 259</label><value>259</value></item>	
+				
+				<item><label>Piège 260</label><value>260</value></item>
+				<item><label>Piège 261</label><value>261</value></item>
+				<item><label>Piège 262</label><value>262</value></item>
+				<item><label>Piège 263</label><value>263</value></item>
+				<item><label>Piège 264</label><value>264</value></item>
+				<item><label>Piège 265</label><value>265</value></item>
+				<item><label>Piège 266</label><value>266</value></item>
+				<item><label>piège 267</label><value>267</value></item>
+				<item><label>piège 268</label><value>268</value></item>
+				<item><label>Piège 269</label><value>269</value></item>			
+				
+			</select1>		
+		  
+
+		  
+			<upload ref="/data/photo" mediatype="image/*">
+				<label>Prendre une photo</label>
+				<hint>ou sélectionner une photo de la galerie</hint>
+			</upload>
+
+			
+
+			<input  ref="/data/remarque">
+				<label>Remarque</label>
+			</input>
+
+			 						
+
+	
+	</h:body>
+
+</h:html>

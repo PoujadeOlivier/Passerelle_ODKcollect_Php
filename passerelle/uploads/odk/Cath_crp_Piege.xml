@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<h:html xmlns="http://www.w3.org/2002/xforms" xmlns:h="http://www.w3.org/1999/xhtml" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa">
+
+	<h:head>
+		<h:title>CRP_Piege</h:title>
+		<model>
+
+		
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 1 ###########################
+			#######################################################-->
+			
+			<instance>
+				<!-- submitted data and defaults go here -->
+				<data id="CRP_Piege">
+						<!-- hidden fields -->
+						<StartTime/>
+						<EndTime/>
+
+						<binome>Cath</binome>
+						<datepose/>
+						<nom/>
+						<type/>	
+						<pheromone/>
+						<kairomone/>						
+						<additif/>
+
+						<gps_select/>	
+						<latitude/>
+						<longitude/>						
+						<locationMap/>
+						
+						<adresse/>
+						<support/>
+						<hauteur/>
+						<actif>Oui</actif>						
+
+						
+						<remarque/>
+
+				</data>
+			</instance>
+
+
+
+
+
+			
+
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 2 ###########################
+			#######################################################-->
+			
+			<bind nodeset="/data/StartTime" type="dateTime" jr:preload="timestamp" jr:preloadParams="start"/>
+			<bind nodeset="/data/EndTime" type="dateTime" jr:preload="timestamp" jr:preloadParams="end"/>
+
+			
+			<bind nodeset="/data/binome" type="string" required="true()"/>
+			<bind  calculate="now()" nodeset="/data/datepose" type="date" required="true()"/>
+			
+			
+			<bind nodeset="/data/nom" type="select1" required="true()"/>			
+			
+			
+			<bind nodeset="/data/type" type="select1"  required="false()"/>	
+			<bind nodeset="/data/pheromone" type="select1"  required="false()"/>
+			<bind nodeset="/data/kairomone" type="select1"  required="false()"/>			
+			<bind nodeset="/data/additif" type="select1"  required="false()"/>				
+
+			
+
+			<bind nodeset="/data/gps_select" type="select1" required="true()" calculate="once('GpsGarmin')" />
+			<bind nodeset="/data/latitude" type="decimal" required="true()" relevant="selected( /data/gps_select , 'GpsGarmin')" />
+			<bind nodeset="/data/longitude" type="decimal" required="true()" relevant="selected( /data/gps_select , 'GpsGarmin')" />			
+			<bind nodeset="/data/locationMap" type="geopoint" required="true()" relevant="selected( /data/gps_select , 'GpsEtCarte')" />	
+
+
+		
+			<bind nodeset="/data/adresse" type="string" required="false()"/>	
+			<bind nodeset="/data/support" type="string" required="false()"/>		
+			<bind nodeset="/data/hauteur" type="decimal" required="false()"/>			
+
+			<bind nodeset="/data/actif" type="select1" required="true()"/>				
+			
+			<bind nodeset="/data/remarque" type="string" required="false()"/>
+			
+		</model>
+	</h:head>
+
+
+	<h:body>			
+
+	
+			<!-- ##################################################
+			#######################################################
+			################### ETAPE 3 ###########################
+			#######################################################-->
+			
+			
+  <group appearance="field-list">
+	  <input  ref="/data/datepose" appearance="no-calendar">
+		<label>Date de pose du piège </label>
+	  </input>
+	  <input ref="/data/binome">
+		<label>Identifiant technicien</label>
+		<hint>Garder le même toute la campagne</hint>
+	  </input>	  
+  </group>			
+ 
+ 
+
+
+	<select1 ref="/data/nom" appearance="search">
+		<label>Numéro du nouveau piège</label>
+		<hint>Identifiant unique</hint>
+
+		<item><label>Piège 240</label><value>240</value></item>
+		<item><label>Piège 241</label><value>241</value></item>
+		<item><label>Piège 242</label><value>242</value></item>
+		<item><label>Piège 243</label><value>243</value></item>
+		<item><label>Piège 244</label><value>244</value></item>
+		<item><label>Piège 245</label><value>245</value></item>
+		<item><label>Piège 246</label><value>246</value></item>
+		<item><label>piège 247</label><value>247</value></item>
+		<item><label>piège 248</label><value>248</value></item>
+		<item><label>Piège 249</label><value>249</value></item>		
+		
+		<item><label>Piège 250</label><value>250</value></item>
+		<item><label>Piège 251</label><value>251</value></item>
+		<item><label>Piège 252</label><value>252</value></item>
+		<item><label>Piège 253</label><value>253</value></item>
+		<item><label>Piège 254</label><value>254</value></item>
+		<item><label>Piège 255</label><value>255</value></item>
+		<item><label>Piège 256</label><value>256</value></item>
+		<item><label>piège 257</label><value>257</value></item>
+		<item><label>piège 258</label><value>258</value></item>
+		<item><label>Piège 259</label><value>259</value></item>	
+		
+		<item><label>Piège 260</label><value>260</value></item>
+		<item><label>Piège 261</label><value>261</value></item>
+		<item><label>Piège 262</label><value>262</value></item>
+		<item><label>Piège 263</label><value>263</value></item>
+		<item><label>Piège 264</label><value>264</value></item>
+		<item><label>Piège 265</label><value>265</value></item>
+		<item><label>Piège 266</label><value>266</value></item>
+		<item><label>piège 267</label><value>267</value></item>
+		<item><label>piège 268</label><value>268</value></item>
+		<item><label>Piège 269</label><value>269</value></item>	
+
+	</select1>		
+	
+
+  <group appearance="field-list">
+  
+	  <select1 ref="/data/type">
+		<label>Sélectionnez le Type de piège</label>	
+		<item><label>Piège Capricorne Suspendu</label><value>Piège_Capricorne_Suspendu</value></item>
+		<item><label>Piège chinois Suspendu</label><value>Piège_chinois_Suspendu</value></item>
+		<item><label>Piège noir</label><value>Piège_Noir</value></item> 			
+		<item><label>Rynchotrack</label><value>Rynchotrack</value></item>	
+		<item><label>Seau Piège blanc</label><value>Seau_Piège_blanc</value></item>	
+	  </select1>
+	  
+	  <select1 ref="/data/pheromone">
+		<label>Sélectionnez la Phéromone</label>	
+		<item><label>M2i</label><value>M2i</value></item>			
+		<item><label>M2i_Flacon</label><value>M2i_Flacon</value></item>			
+		<item><label>M2i_Sachet</label><value>M2i_Sachet</value></item>			
+		<item><label>Rhylure</label><value>Rhylure</value></item>
+	  </select1>
+	  
+	   <select1 ref="/data/kairomone">
+		<label>Sélectionnez la Kairomone</label>	
+		<item><label>Kairomone Rhylure</label><value>Kairomone_Rhylure</value></item>
+	  </select1> 
+
+	  <select1 ref="/data/additif">
+		<label>Sélectionnez l'Additif</label>	
+		<item><label>Dattes</label><value>Dattes</value></item>
+		<item><label>Hachis de feuilles de palmiers</label><value>Hachis_de_feuilles_de_palmiers</value></item>	
+	  </select1>  
+	
+  </group>	 
+
+
+
+
+
+
+
+	<select1 ref="/data/gps_select">
+	<label>Quel module GPS</label>
+		<item><label>GpsGarmin</label><value>GpsGarmin</value></item>
+		<item><label>GpsEtCarte</label><value>GpsEtCarte</value></item>				
+	</select1>	
+
+
+	<group appearance="field-list">
+		<input ref="/data/latitude">
+			<label>Latitude</label>
+			<hint>saisie avec 5 décimales ex: 41.xxxxx</hint>
+		</input>
+		<input ref="/data/longitude">
+			<label>Longitude</label>
+			<hint>saisie avec 5 décimales ex: 8.yyyyy</hint>
+		</input>
+	</group>
+
+
+	<!-- accuracyThreshold="1.5" -->
+	 <input ref="/data/locationMap" appearance="placement-map" >
+	   <label>Faire un point GPS (possibilité de déplacer le point sur la carte)</label>
+	   <hint>Activer le GPS + les données mobiles</hint>
+	 </input>
+
+
+
+
+
+
+
+  <group appearance="field-list">
+	  <input ref="/data/adresse">
+		<label>Adresse</label>
+	  </input>
+
+	  <input  ref="/data/support">
+		<label>Support</label>
+		<hint>ex:pylône, sol, arbre, clotûre...</hint>
+	  </input>			  
+	  
+	  <input  ref="/data/hauteur">
+		<label>Hauteur installation du piège</label>
+		<hint>en mètre</hint>
+	  </input>			
+  </group>	
+
+
+			<group appearance="field-list">			
+			<select1 ref="/data/actif">
+			<label>Le piège est Actif</label>
+				<item><label>Oui</label><value>Oui</value></item>		
+				<item><label>Non</label><value>Non</value></item>
+			</select1>	
+
+			<input  ref="/data/remarque">
+				<label>Remarque</label>
+			</input>			
+			</group>		
+						
+
+	
+	</h:body>
+
+</h:html>
