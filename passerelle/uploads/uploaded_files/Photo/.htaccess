@@ -1,0 +1,17 @@
+#RemoveHandler .php .phtml .php3
+#RemoveType .php .phtml .php3
+
+#php_flag engine Off
+
+
+# Aucun script dans le dossier et ses sous-dossiers, que ce soit PHP, PERL ou autre CGI, ne pourra s'executer si ExecCGI est inactif. Et interdit d'afficher la liste des fichiers.
+
+RemoveHandler all
+RemoveType all
+php_flag engine off
+
+
+
+Options All -Indexes
+#OPTIONS -ExecCGI  -Indexes
+
