@@ -46,6 +46,11 @@ Ce code traite <br/>
 - la réception des formulaires complétés avec média rattachés (photo, signature, son...)<br/>
 - les entrées en doublons si la connexion est réinitilisée par ODKcollect et les données renvoyées, en cas de connexion mauvaise, un exemple dans XFORMcrpBoucleComptage.php<br/>
 
+Fonctionne autant en HTTP qu'en HTTPS , ODKcollect n'accepte que des certificat certifié !<br/>
+Je l'ai utilisé avec un certificat letsencrypt.org généré par certbot <br/>
+source<br/>
+https://howto.wared.fr/ubuntu-certificats-ssl-tls-certbot/
+
 
 Remarques pour le démarrage :<br/>
 php.ini<br/>
