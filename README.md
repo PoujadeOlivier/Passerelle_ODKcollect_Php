@@ -44,7 +44,7 @@ Les transactions entre ODKcollect et le serveur sont opérationnelles.<br/>
 Ce code traite <br/>
 - la récupération des formulaires vierges<br/>
 - la réception des formulaires complétés avec média rattachés (photo, signature, son...)<br/>
-- les entrées en doublon si la connexion est réinitilisée par ODKcollect et les données renvoyées, en cas de connexion mauvaise, un exemple dans XFORMcrpBoucleComptage.php<br/>
+- les entrées en doublons si la connexion est réinitilisée par ODKcollect et les données renvoyées, en cas de connexion mauvaise, un exemple dans XFORMcrpBoucleComptage.php<br/>
 
 
 Remarques pour le démarrage :<br/>
