@@ -15,6 +15,12 @@ define('BASE_DIR', $match[1][0] . '/');
 
 define ('FS_PATH', str_replace('//', '/', $_SERVER['DOCUMENT_ROOT'] . '/' . BASE_DIR));
 
-define ('BASE_URL', 'http://' . str_replace('//', '/', $_SERVER['SERVER_NAME'] . '/' . BASE_DIR));
+//Olivier traitement si port non standard
+//define ('BASE_URL', 'http://' . str_replace('//', '/', $_SERVER['SERVER_NAME'] . '/' . BASE_DIR));
+//devient
+
+$olivPORT = ( ($_SERVER['SERVER_PORT'] != '80') && ($_SERVER['SERVER_PORT'] != '443') ? ":".$_SERVER['SERVER_PORT'] : '');
+$olivHTTP = ( $_SERVER['HTTPS'] == 'on' ? 'https://' : 'http://');
+define ('BASE_URL', $olivHTTP . str_replace('//', '/', $_SERVER['SERVER_NAME']. $olivPORT . '/' . BASE_DIR));
 
 ?>
