@@ -11,7 +11,7 @@ require_once("../config.php");
 //######
 //######		ACTIVER pour DEBUG, attention : déplacer le ficher xml dans le dossier submission et lancer directement l'url de ce script pour rejouer le traitement
 //######
-//http://192.168.1.64/test/submission/XFORMcrpPiege.php
+//http://ipduserveur/passerelle/submission/XFORMcrpPiege.php
 //$xml = simplexml_load_file('./LPS crp BoucleComptage_2021-04-02_09-05-59.xml');
 
 
@@ -20,7 +20,7 @@ require_once("../config.php");
 
 //$URIvisite = (isset($xml->URIvisite) ? $xml->URIvisite : uniqid());
 //Utile ici pour éviter les entrées traitées plusieurs fois, doublons
-//car si le reéseau est faible, la connexion est réinitialiser et odk collect renvoi tous les formulaires
+//car si le réseau est faible, la connexion est réinitialisée et odk collect renvoi tous les formulaires
 //il peut y avoir des bugs de traitement 2 fois, notamenent si il y a des photos ou des formulaires assez gros !!
 $URIvisite = (isset($xml->URIvisite) ? $xml->URIvisite : '');
 
