@@ -9,7 +9,7 @@ require_once("../config.php");
 //######
 //######		ACTIVER pour DEBUG, attention : déplacer le ficher xml dans le dossier submission et lancer directement l'url de ce script pour rejouer le traitement
 //######
-//http://192.168.1.64/test/submission/XFORMcrpPiege.php
+//http://ipduserveur/passerelle/submission/XFORMcrpPiege.php
 //$xml = simplexml_load_file('./LPS crp Piege_2021-04-02_09-06-31.xml');
 
 
