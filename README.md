@@ -62,7 +62,7 @@ upload_max_filesize = 30M<br/>
 max_execution_time = 60
 
 apache2<br/>
-#pensez à interdire l'exécution de page php dans les dossiers de réception des fichiers reçus du clients ODKcollect<br/>
+#pensez à interdire l'exécution de page php dans les dossiers de réception des fichiers reçus du client ODKcollect<br/>
 <DirectoryMatch "uploads/uploaded_files"><br/>
 RemoveHandler all<br/>
 RemoveType all<br/>
